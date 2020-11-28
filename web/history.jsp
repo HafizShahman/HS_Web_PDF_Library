@@ -33,7 +33,7 @@
         <style>
             body {
                 background-color: navajowhite;
-                background-image: url("yellow-comic.jpg"):
+                background-image: url("yellow-comic.jpg");
                     text-align: center;
             }
         </style>

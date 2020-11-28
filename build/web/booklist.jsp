@@ -36,7 +36,7 @@
         <link rel="stylesheet" href="css/booklist-box.css">
         <style>
             .main-content {
-                background: image("yellow-comic.jpg"):
+                background: image("yellow-comic.jpg");
             }
         </style>
         <script>
