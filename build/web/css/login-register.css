@@ -1,5 +1,10 @@
-html{
-
+body{
+    background-image: url('https://pa1.narvii.com/7607/bf7b0b69655bf16c72dc53d344259b16dd073e02r1-704-720_hq.gif');
+    background-position: center center;
+    background-size: auto;
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    background-color: black;   
 }
 
 .form-register{
@@ -22,7 +27,7 @@ html{
 .form-register-with-email .form-white-background{
     width: 570px;
     box-sizing: border-box;
-    background-color: #ffb84d;
+    background-color: none;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
     padding: 60px 45px;
     margin-bottom: 35px;

@@ -9,7 +9,7 @@
 <%
     if (session.getAttribute("login") != null) //check login session user not access or back to index.jsp page
     {
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("mainmenu.jsp");
     }
 %>
 <%
@@ -37,7 +37,7 @@
 
                 if (email.equals(dbemail) && password.equals(dbpassword)) {
                     session.setAttribute("login", dbemail); //session name is login and store fetchable database email address
-                    response.sendRedirect("index.jsp"); //after login success redirect to welcome.jsp page
+                    response.sendRedirect("mainmenu.jsp"); //after login success redirect to welcome.jsp page
                 }
             } else {
                 request.setAttribute("errorMsg", "invalid email or password"); //invalid error message for email or password wrong

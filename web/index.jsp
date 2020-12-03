@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <!--<style>
+        <style>
             body {
                 background-color: navajowhite;
                 text-align: center;
@@ -27,7 +27,7 @@
                 cursor: pointer;
                 border-radius: 12px;
             }
-        </style>-->
+        </style>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/login-register.css">
     </head>
@@ -38,7 +38,6 @@
                 <div class="form-register-with-email">
                     <div class="form-white-background">
                         <div class="main-content">
-
                             <h1> Hello, <%=session.getAttribute("login")%></h1>
                             <button><a href="logout.jsp">Logout</a></button>
                             <button class="btn"><a href="booklist.jsp">book list</a></button>

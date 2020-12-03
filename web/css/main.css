@@ -6,14 +6,6 @@
     box-sizing: border-box;
 }
 
-html{
-    background-image: url('../media/yellow-comic.jpg');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
 body{
     font:14px/1.5 Arial, Helvetica, sans-serif;
     margin:0;

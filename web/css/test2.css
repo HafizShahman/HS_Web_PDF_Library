@@ -1,0 +1,46 @@
+#btn-row .btn {
+    background-color: #4CAF50; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: aliceblue; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+    margin: 30px auto 0;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    display: block;
+    border-radius: 15px;
+    font-weight: bold;
+    text-align:center;
+    font-size: 15px;
+}
+
+#btn-row .btn:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+#btn-row .btn:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Add a background color on hover */
+#btn-row .btn:hover {
+    background-color: #3e8e41;
+}
+
+#t1 span{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#t1 span{
+    display: inline-block;
+    box-sizing: border-box;
+    color:  #4c565e;
+    font-size: 24px;
+    padding: 0 20px 15px;
+    border-bottom: 2px solid #e74c3c;
+    margin: 0;
+}
