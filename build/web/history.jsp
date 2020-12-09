@@ -30,19 +30,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <style>
-            body {
-                background-color: navajowhite;
-                background-image: url("yellow-comic.jpg");
-                    text-align: center;
-            }
-        </style>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/mainmenu.css">
     </head>
     <body>
         <div class="container">
             <form class="form-inline" method="post" action="search.jsp">
                 <input type="text" name="genre" class="form-control" placeholder="Search genre">
-                
+
                 <button type="submit" name="save" class="btn btn-primary">Search</button>
             </form>
             <link rel="stylesheet" href="css/main.css">

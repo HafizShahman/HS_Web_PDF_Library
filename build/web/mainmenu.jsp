@@ -8,9 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Full page scroll</title>
+        <title>Main Menu</title>
         <link rel="stylesheet" type="text/css" href="css/full-page-scroll.css" />
-        <link rel="stylesheet" type="text/css" href="css/test2.css" />
+        <link rel="stylesheet" type="text/css" href="css/mainmenu.css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
     </head>
     <body>
@@ -19,24 +19,27 @@
                 <div id="t1">
                     <span>Welcome to Online PDF Library</span>
                 </div>
-                <br>
                 <div class="main-content">
                     <h1> Hello, <%=session.getAttribute("login")%></h1>
-                    <button class="btn"><a href="logout.jsp">Logout</a></button>
+                </div><br><br><br>
+                <div class="form-register-with-email" style="margin-bottom: 90px;">
+                    <a href="logout.jsp" class="btn-acc form-log-in-with-existing btn-two"><b>Logout</b></a><br>
                 </div>
-                <div id="btn-row">
-                    <button class="btn"><a href="booklist.jsp">book list</a></button>
-                    <button class="btn"><a href="booklist.jsp">book list</a></button>
+                <div class="imgbox">
+                    <img src="media/scroll-down.png" class="imgdown" width="100px" height="100px" style="overflow: hidden;">
                 </div>
+
             </section>
+
+
             <section class="section2">
                 <div>
                     <span>Search Book</span>
                 </div>
                 <div>
                     <form class="form-inline" method="post" action="search.jsp">
-                        <input type="text" name="val" class="form-control" placeholder="Search...">
-                        <select id="select" name="select"> 
+                        <input type="text" name="val" class="form-control boxx" placeholder="Search...">
+                        <select id="select" name="select" class="boxx"> 
                             <option selected="none">Select one</option>
                             <option value="booktitle">Book Title</option> 
                             <option value="genre">Genre</option> 
@@ -46,19 +49,57 @@
                     </form>
                 </div>
             </section>
+
+
             <section class="section3">
                 <div>
-                    <span>Have A Nice Day 😘😘</span>
+                    <span>Go to Library</span>
+                </div>
+                <br>
+                <div class="form-register-with-email">
+                    <a href="booklist.jsp" class="btn-acc form-log-in-with-existing btn-one"><b>Book List</b></a>
                 </div>
             </section>
+
+
             <section class="section4">
                 <div>
                     <span>Much Love From Me</span>
                 </div>
             </section>
+
+
             <section class="section5">
                 <div>
-                    <span>💖💖</span>
+                    <center>
+                        <table border="1" bordercolor="white" align="center" width="50%">
+                            <tr>
+                                <td width="300px">Name</td>
+                                <td width="100px">Matric Number</td>
+                                <td width="50px">Class</td>
+                            </tr>
+                            <tr>
+                                <td>Muhammad Hafiz Shahman Bin Mohd Nor Hisham</td>
+                                <td>19DDT18F2070</td>
+                                <td>DDT4A</td>
+                            </tr>
+                            <tr>
+                                <td>Lailyyana Binti Buyong</td>
+                                <td>19DDT18F2100</td>
+                                <td>DDT4A</td>
+                            </tr>
+                            <tr>
+                                <td>Lukman Hakim Bin Ibrahim</td>
+                                <td>19DDT18F2083</td>
+                                <td>DDT4A</td>
+                            </tr>
+                            <tr>
+                                <td>Nadhrah Husna Binti Idris</td>
+                                <td>19DDT18F1004</td>
+                                <td>DDT5A</td>
+                            </tr>
+                        </table>
+                    </center>
                 </div>
             </section>
         </div>
@@ -69,13 +110,17 @@
                                 displayDots: true,
                                 dotsPosition: "left",
                                 animateTime: 0.7,
-                                animateFunction: "ease",
+                                animateFunction: "ease"
                             });
         </script>
     </body>
     <style type="text/css">
         .section1 {
-            background-color: #7dbcd4;
+            background-image: url('media/star.gif');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         .section2 {

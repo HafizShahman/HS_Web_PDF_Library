@@ -1,5 +1,5 @@
 body{
-    background-image: url('https://pa1.narvii.com/7607/bf7b0b69655bf16c72dc53d344259b16dd073e02r1-704-720_hq.gif');
+    background-image: url('../media/loading.gif');
     background-position: center center;
     background-size: auto;
     background-repeat: repeat-x;
@@ -27,9 +27,8 @@ body{
 .form-register-with-email .form-white-background{
     width: 570px;
     box-sizing: border-box;
-    background-color: none;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-    padding: 60px 45px;
+    padding: 40px 45px;
     margin-bottom: 35px;
     top: 50%
 }
@@ -42,15 +41,17 @@ body{
 .form-register-with-email .form-title-row{
     text-align: center;
     margin-bottom: 50px;
+    color: white;
 }
 
 .form-register-with-email h1{
     display: inline-block;
     box-sizing: border-box;
-    color:  #4c565e;
-    font-size: 24px;
+    color: white
+        //color:  #4c565e;
+        font-size: 24px;
     padding: 0 20px 15px;
-    border-bottom: 2px solid #e74c3c;
+    border-bottom: 2px solid rgb(255, 0, 0);
     margin: 0;
 }
 
@@ -110,9 +111,63 @@ body{
     text-decoration: none;
     padding: 15px 45px;
     font-weight: normal;
-    color: #7b9d62;
-    background-color: #d6f0c3;
+    color: red;
+    background-color: black;
 }
+.btn-acc{
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+}
+
+/*button two*/
+.btn-two {
+    color: #FFF;
+    transition: all 0.5s;
+    position: relative; 
+}
+.btn-two span {
+    z-index: 2; 
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+}
+.btn-two::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.1);
+}
+.btn-two::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.3);
+}
+.btn-two:hover::before {
+    transform: rotate(-45deg);
+    background-color: rgba(255,255,255,0);
+}
+.btn-two:hover::after {
+    transform: rotate(45deg);
+    background-color: rgba(255,255,255,0);
+}
+
 
 /*.form-register-with-email:after{
     content: 'OR';

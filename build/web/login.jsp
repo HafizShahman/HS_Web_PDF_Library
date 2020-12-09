@@ -112,7 +112,7 @@
                         </div>
                         <input type="submit" name="btn_login" value="Login">
                     </div>
-                    <a href="RegisterPage.jsp" class="form-log-in-with-existing">You Don't have an account? <b> Register here </b></a>
+                    <a href="RegisterPage.jsp" class="btn-acc form-log-in-with-existing btn-two">You Don't have an account? <b> Register here </b></a>
                 </div>
             </form>
         </div>
