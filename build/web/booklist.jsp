@@ -68,7 +68,6 @@
                 background-repeat: no-repeat;
                 background-attachment: fixed;
             }
-
         </style>
     </head>
     <body>
@@ -122,7 +121,7 @@
                             <td width="100" value="<%=resultSet.getString("link")%>" name="lin">
                                 <input type="radio" name="dwradio" value="<%=resultSet.getString("link")%>" onclick="alert('<%=resultSet.getString("link")%>')">
                             </td>
-                        </tr>
+                            </tr>
                             <%
                                     }
                                     connection.close();

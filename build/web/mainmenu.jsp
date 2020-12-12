@@ -140,7 +140,11 @@
         }
 
         .section5 {
-            background-color: #d2c598;
+            background-image: url('media/triangle.jpg');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         section div {
