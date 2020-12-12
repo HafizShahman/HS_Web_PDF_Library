@@ -64,7 +64,11 @@
 
             <section class="section4">
                 <div>
-                    <span>Much Love From Me</span>
+                    <span>Go to User History</span>
+                </div>
+                <br>
+                <div class="form-register-with-email">
+                    <a href="history.jsp" class="btn-acc form-log-in-with-existing btn-one"><b>History</b></a>
                 </div>
             </section>
 

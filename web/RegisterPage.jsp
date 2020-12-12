@@ -9,7 +9,7 @@
 <%
     if (session.getAttribute("login") != null) //check login session user not access or back to register.jsp page
     {
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("mainmenu.jsp");
     }
 %>
 <%
@@ -56,7 +56,7 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/login-register.css">
 
-        <!-- javascript for registeration form validation-->
+        <!-- javascript for registration form validation-->
         <script>
 
             function validate()
@@ -73,35 +73,35 @@
                 var email = document.getElementById("email"); //textbox id email
                 var password = document.getElementById("password"); //textbox id password
 
-                if (!first_name.test(Name.value) || Name.value == '')
+                if (!first_name.test(Name.value) || Name.value === '')
                 {
                     alert("Enter Firstname Alphabet Only....!");
                     Name.focus();
                     Name.style.background = '#f08080';
                     return false;
                 }
-                if (!add_ress.test(address.value) || address.value == '')
+                if (!add_ress.test(address.value) || address.value === '')
                 {
                     alert("Enter Address Alphabet Only....!");
                     address.focus();
                     address.style.background = '#f08080';
                     return false;
                 }
-                if (!phone_no.test(phonen.value) || phonen.value == '')
+                if (!phone_no.test(phonen.value) || phonen.value === '')
                 {
                     alert("Enter Phone Nunber Only....!");
                     phonen.focus();
                     phonen.style.background = '#f08080';
                     return false;
                 }
-                if (!email_valid.test(email.value) || email.value == '')
+                if (!email_valid.test(email.value) || email.value === '')
                 {
                     alert("Enter Valid Email....!");
                     email.focus();
                     email.style.background = '#f08080';
                     return false;
                 }
-                if (!password_valid.test(password.value) || password.value == '')
+                if (!password_valid.test(password.value) || password.value === '')
                 {
                     alert("Password Must Be 6 to 12 and allowed !@#$%&*()<> character");
                     password.focus();

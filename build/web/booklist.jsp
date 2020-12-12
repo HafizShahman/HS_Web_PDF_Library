@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%@page import="javax.swing.JOptionPane"%>
 <%@ page import="java.sql.*" %>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
@@ -29,6 +29,29 @@
     ResultSet resultSet = null;
 %>
 
+<%
+    try {
+        connection = DriverManager.getConnection(connectionUrl, userid, password); //create connection
+
+        if (request.getParameter("btndol") != null) {
+            String bookid = request.getParameter("dwradio"); //txt_lastname
+
+            PreparedStatement pstmt = null; //create statement
+
+            pstmt = connection.prepareStatement("insert into userhistory(Email, bookid, booktitle, link) "
+                    + "select storeuser.Email, booklist.bookid, booklist.booktitle, booklist.link "
+                    + "from storeuser, booklist "
+                    + "where storeuser.Email='" + session.getAttribute("login") + "' and booklist.link='" + bookid + "'"); //sql insert query
+            pstmt.executeUpdate(); //execute query
+            JOptionPane.showMessageDialog(null, "Database Success");
+            connection.close(); //close connection
+        }
+    } catch (Exception e) {
+        out.println(e);
+        JOptionPane.showMessageDialog(null, "Database Link Failed");
+    }
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -50,11 +73,9 @@
     </head>
     <body>
         <div class="form-register-with-email">
-            <a href="mainmenu.jsp" class="btn-acc form-log-in-with-existing btn-three" id="btn-back-menu"><b>Main Menu</b></a>
+            <a href="mainmenu.jsp#2" class="btn-acc form-log-in-with-existing btn-three" id="btn-back-menu"><b>Main Menu</b></a>
             <center>
                 <div class="main-content">
-
-
                     <div class="container">
                         <form class="form-inline" method="post" action="search.jsp">
                             <input type="text" name="val" class="form-control boxx" placeholder="Search...">
@@ -64,10 +85,14 @@
                                 <option value="genre">Genre</option> 
                                 <option value="year">Year</option> 
                             </select>
-                            <button type="submit" name="save" class="btn btn-primary" onclick="getOption()">Search</button>
+                            <button type="submit" name="save" class="btn btn-primary">Search</button>
                         </form>
                     </div>
-                    <h4>User : <%=session.getAttribute("login")%></h4>
+                    <br>
+                    <div>
+                        <h3>User : <%=session.getAttribute("login")%></h3>
+                    </div>
+                    <br>
                     <h1>Book List</h1>
                     <br>
                     <table border="0.5" bordercolor="white" align="center">
@@ -93,57 +118,29 @@
                             <td width="300" value="<%=resultSet.getString("author")%>" name="au"><%=resultSet.getString("author")%></td>
                             <td width="150" value="<%=resultSet.getString("genre")%>" name="gg"><%=resultSet.getString("genre")%></td>
                             <td width="100" value="<%=resultSet.getString("year")%>" name="ye"><%=resultSet.getString("year")%></td>
+                        <form id="u">
                             <td width="100" value="<%=resultSet.getString("link")%>" name="lin">
-                                <button id="btndw" onclick="btninsert()" name="btndol"><a href="<%=resultSet.getString("link")%>">Download</a></button>
+                                <input type="radio" name="dwradio" value="<%=resultSet.getString("link")%>" onclick="alert('<%=resultSet.getString("link")%>')">
                             </td>
                         </tr>
-                        <%
+                            <%
+                                    }
+                                    connection.close();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                    JOptionPane.showMessageDialog(null, "Database Failed");
                                 }
-                                connection.close();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        %>
+                            %>
+                            <tr align="center">
+                            <br>
+                            <td colspan="6"><input type="submit" value="DOWNLOAD" name="bradio"></td>
+                        </form>
+                        </tr>
                     </table>
+
+
                 </div>
             </center>
         </div>
     </body>
-    <script>
-        function btninsert() {
-        <%
-                try {
-                    Class.forName("com.mysql.jdbc.Driver"); //load driver
-
-                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/history", "root", ""); //create connection
-
-                    if (request.getParameter("btndol") != null) //check register button click event not null
-                    {
-                        String Email, bookid, booktitle, link;
-
-                        Email = request.getParameter("id"); //txt_firstname
-                        bookid = request.getParameter("bID"); //txt_lastname
-                        booktitle = request.getParameter("bTI"); //txt_lastname
-                        link = request.getParameter("lin"); //txt_email
-
-                        PreparedStatement pstmt = null; //create statement
-
-                        pstmt = con.prepareStatement("insert into history(Name,Address,PhoneNo,Email,Password) values(?,?,?,?,?)"); //sql insert query
-                        pstmt.setString(1, Email);
-                        pstmt.setString(2, bookid);
-                        pstmt.setString(3, booktitle);
-                        pstmt.setString(4, link);
-
-                        pstmt.executeUpdate(); //execute query
-
-                        request.setAttribute("successMsg", "Register Successfully...! Please login"); //register success messeage
-
-                        con.close(); //close connection
-                    }
-                } catch (Exception e) {
-                    out.println(e);
-                }
-        %>
-        }
-    </script>
 </html>

@@ -87,7 +87,8 @@
     </head>
     <body>
         <div class="form-register-with-email">
-            <a href="mainmenu.jsp" class="btn-acc form-log-in-with-existing btn-three" id="btn-back-menu"><b>Main Menu</b></a>
+            <a href="mainmenu.jsp#1" class="btn-acc form-log-in-with-existing btn-three" id="btn-back-menu"><b>Main Menu</b></a>
+            <a href="booklist.jsp" class="btn-acc form-log-in-with-existing btn-three" id="btn-back-menu"><b>Back To Full List</b></a>
             <center>
                 <div class="main-content">
 
@@ -104,10 +105,14 @@
                             <button type="submit" name="save" class="btn btn-primary" onclick="getOption()">Search</button>
                         </form>
                     </div>
-                    <h4>User : <%=session.getAttribute("login")%></h4>
+                    <br>
+                    <div>
+                        <h3>User : <%=session.getAttribute("login")%></h3>
+                    </div>
+                    <br>
                     <h1>Book List</h1>
                     <br>
-                    <table border="1" bordercolor="white" align="center">
+                    <table border="0.5" bordercolor="white" align="center">
                         <tr>
                             <td width="70">Book ID</td>
                             <td width="300">Book Title</td>
