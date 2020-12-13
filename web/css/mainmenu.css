@@ -1,3 +1,16 @@
+@font-face {
+    src: url("css/font/tricky jimmy.ttf");
+    font-family: jim;
+}
+@font-face {
+    src: url("css/font/OCR.ttf");
+    font-family: ocr;
+}
+@font-face {
+    src: url("css/font/EARTHQUAKE.TTF");
+    font-family: ear;
+}
+
 #btn-row .btn {
     background-color: #4CAF50; /* Green background */
     border: 1px solid green; /* Green border */
@@ -41,6 +54,7 @@
     padding: 0 20px 15px;
     border-bottom: 2px solid #e74c3c;
     margin: 0;
+
 }
 .main-content {
     color: white;

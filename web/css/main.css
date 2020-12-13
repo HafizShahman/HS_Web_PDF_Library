@@ -1,5 +1,5 @@
 @font-face {
-    src: url("media/font/tricky jimmy.ttf");
+    src: url("css/font/tricky jimmy.ttf");
     font-family: jim;
 }
 
@@ -10,7 +10,8 @@
 }
 
 body{
-    font:14px/1.5 Arial, Helvetica, sans-serif;
+    font-family: jim;
+    font-size: 14px;
     margin:0;
 }
 
