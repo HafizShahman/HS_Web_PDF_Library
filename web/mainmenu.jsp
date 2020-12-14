@@ -76,31 +76,36 @@
             <section class="section5">
                 <div>
                     <center>
-                        <table border="1" bordercolor="white" align="center" width="50%">
-                            <tr>
-                                <td width="300px">Name</td>
-                                <td width="100px">Matric Number</td>
-                                <td width="50px">Class</td>
+                        <table border="0.5" bordercolor="white" align="center" width="50%">
+                            <tr style="height:35px; color: white;">
+                                <th width="300px">Name</th>
+                                <th width="100px">Matric Number</th>
+                                <th width="50px">Class</th>
+                                <th width="40px">Social</th>
                             </tr>
-                            <tr>
+                            <tr style="height:35px; background-color: rgba(49, 57, 73, 0.5); color: white;">
                                 <td>Muhammad Hafiz Shahman Bin Mohd Nor Hisham</td>
                                 <td>19DDT18F2070</td>
                                 <td>DDT4A</td>
+                                <td><a href="https://www.instagram.com/hfzshahman/"><img src="media/instagram.png" width=30px"></a></td>
                             </tr>
-                            <tr>
+                            <tr style="height:35px; background-color: rgba(49, 57, 73, 0.5); color: white;">
                                 <td>Lailyyana Binti Buyong</td>
                                 <td>19DDT18F2100</td>
                                 <td>DDT4A</td>
+                                <td><a href="https://www.instagram.com/lailyyana/"><img src="media/instagram.png" width=30px"></a></td>
                             </tr>
-                            <tr>
+                            <tr style="height:35px; background-color: rgba(49, 57, 73, 0.5); color: white;">
                                 <td>Lukman Hakim Bin Ibrahim</td>
                                 <td>19DDT18F2083</td>
                                 <td>DDT4A</td>
+                                <td><a href="https://www.instagram.com/1ukmanhakim/"><img src="media/instagram.png" width=30px"></a></td>
                             </tr>
-                            <tr>
+                            <tr style="height:35px; background-color: rgba(49, 57, 73, 0.5); color: white;">
                                 <td>Nadhrah Husna Binti Idris</td>
                                 <td>19DDT18F1004</td>
                                 <td>DDT5A</td>
+                                <td><a href="https://www.instagram.com/ndhhhhh__/"><img src="media/instagram.png" width=30px"></a></td>
                             </tr>
                         </table>
                     </center>
@@ -119,6 +124,23 @@
         </script>
     </body>
     <style type="text/css">
+        @font-face {
+            src: url("css/font/tricky jimmy.ttf");
+            font-family: jim;
+        }
+        @font-face {
+            src: url("css/font/OCR.ttf");
+            font-family: ocr;
+        }
+        @font-face {
+            src: url("css/font/EARTHQUAKE.TTF");
+            font-family: ear;
+        }
+        @font-face {
+            src: url("css/font/Ghost Story.otf");
+            font-family: gho;
+        }
+
         .section1 {
             background-image: url('media/star.gif');
             background-position: center center;
@@ -128,23 +150,32 @@
         }
 
         .section2 {
-            background-color: #98c19f;
-        }
-
-        .section3 {
-            background-color: #a199e2;
-        }
-
-        .section4 {
-            background-color: #cc938e;
-        }
-
-        .section5 {
-            background-image: url('media/triangle.jpg');
+            background-image: url('media/menu.gif');
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
-            background-attachment: fixed;
+
+        }
+
+        .section3 {
+            background-image: url('media/mirror.jpg');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .section4 {
+            background-image: url('media/sky.jpg');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .section5 {
+            background-image: url('media/purplemoon.jpg');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         section div {
@@ -156,11 +187,11 @@
             transform: translateY(-50%);
         }
         section #t1 {
-            font-family: "Open Sans";
+            font-family: gho;
             font-style: normal;
             text-align: center;
             position: relative;
-            top: 40%;
+            top: 35%;
             transform: translateY(-50%);
         }
         section #btn-row {

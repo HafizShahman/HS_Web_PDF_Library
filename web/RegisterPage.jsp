@@ -61,7 +61,7 @@
 
             function validate()
             {
-                var Name = /^[a-z A-Z]+$/; //pattern allowed alphabet a-z or A-Z 
+                var Na_me = /^[a-z A-Z]+$/; //pattern allowed alphabet a-z or A-Z 
                 var add_ress = /^[a-z A-Z]+$/; //pattern allowed alphabet a-z or A-Z 
                 var phone_no = /^[0-9]+$/; //pattern allowed number 0-9
                 var email_valid = /^[\w\d\.]+\@[a-zA-Z\.]+\.[A-Za-z]{1,4}$/; //pattern valid email validation
@@ -73,7 +73,7 @@
                 var email = document.getElementById("email"); //textbox id email
                 var password = document.getElementById("password"); //textbox id password
 
-                if (!first_name.test(Name.value) || Name.value === '')
+                if (!Na_me.test(Name.value) || Na_me.value === '')
                 {
                     alert("Enter Firstname Alphabet Only....!");
                     Name.focus();

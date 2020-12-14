@@ -45,45 +45,7 @@
             }
 
         </style>
-        <script>
-            function btninsert() {
-            <%
-                try {
-                    Class.forName("com.mysql.jdbc.Driver"); //load driver
-
-                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookstore", "root", ""); //create connection
-
-                    if (request.getParameter("btn_register") != null) //check register button click event not null
-                    {
-                        String Name, Address, PhoneNo, Email, Password;
-
-                        Name = request.getParameter("txt_name"); //txt_firstname
-                        Address = request.getParameter("txt_address"); //txt_lastname
-                        PhoneNo = request.getParameter("txt_phone"); //txt_lastname
-                        Email = request.getParameter("txt_email"); //txt_email
-                        Password = request.getParameter("txt_password"); //txt_password
-
-                        PreparedStatement pstmt = null; //create statement
-
-                        pstmt = con.prepareStatement("insert into storeuser(Name,Address,PhoneNo,Email,Password) values(?,?,?,?,?)"); //sql insert query
-                        pstmt.setString(1, Name);
-                        pstmt.setString(2, Address);
-                        pstmt.setString(3, PhoneNo);
-                        pstmt.setString(4, Email);
-                        pstmt.setString(5, Password);
-
-                        pstmt.executeUpdate(); //execute query
-
-                        request.setAttribute("successMsg", "Register Successfully...! Please login"); //register success messeage
-
-                        con.close(); //close connection
-                    }
-                } catch (Exception e) {
-                    out.println(e);
-                }
-            %>
-            }
-        </script>
+        
     </head>
     <body>
         <div class="form-register-with-email">

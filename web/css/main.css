@@ -69,7 +69,6 @@ ul a{
     margin: 4px;
     line-height: 1;
     outline: none;
-
     transition: 0.2s ease;
 }
 
@@ -86,6 +85,7 @@ ul li a:hover {
 ul li{
     display: inline-block;
 }
+
 
 
 

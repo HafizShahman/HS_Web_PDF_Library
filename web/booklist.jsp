@@ -29,28 +29,7 @@
     ResultSet resultSet = null;
 %>
 
-<%
-    try {
-        connection = DriverManager.getConnection(connectionUrl, userid, password); //create connection
 
-        if (request.getParameter("btndol") != null) {
-            String bookid = request.getParameter("dwradio"); //txt_lastname
-
-            PreparedStatement pstmt = null; //create statement
-
-            pstmt = connection.prepareStatement("insert into userhistory(Email, bookid, booktitle, link) "
-                    + "select storeuser.Email, booklist.bookid, booklist.booktitle, booklist.link "
-                    + "from storeuser, booklist "
-                    + "where storeuser.Email='" + session.getAttribute("login") + "' and booklist.link='" + bookid + "'"); //sql insert query
-            pstmt.executeUpdate(); //execute query
-            JOptionPane.showMessageDialog(null, "Database Success");
-            connection.close(); //close connection
-        }
-    } catch (Exception e) {
-        out.println(e);
-        JOptionPane.showMessageDialog(null, "Database Link Failed");
-    }
-%>
 
 <!DOCTYPE html>
 <html>
@@ -59,7 +38,33 @@
         <title>Library</title>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/mainmenu.css">
+        <script>
+            function dw() {
+    
+}
+            <%
+                try {
+                    connection = DriverManager.getConnection(connectionUrl, userid, password); //create connection
 
+                    if (request.getParameter("btndw") != null) {
+                        String bookid = request.getParameter("btndw"); //txt_lastname
+
+                        PreparedStatement pstmt = null; //create statement
+
+                        pstmt = connection.prepareStatement("insert into userhistory(Email, bookid, booktitle, link) "
+                                + "select storeuser.Email, booklist.bookid, booklist.booktitle, booklist.link "
+                                + "from storeuser, booklist "
+                                + "where storeuser.Email='" + session.getAttribute("login") + "' and booklist.link='" + bookid + "'"); //sql insert query
+                        pstmt.executeUpdate(); //execute query
+                        
+                        connection.close(); //close connection
+                    }
+                } catch (Exception e) {
+                    out.println(e);
+                    
+                }
+            %>
+        </script>
         <style>
             body{
                 background-image: url('media/star.gif');
@@ -117,27 +122,16 @@
                             <td width="300" value="<%=resultSet.getString("author")%>" name="au"><%=resultSet.getString("author")%></td>
                             <td width="150" value="<%=resultSet.getString("genre")%>" name="gg"><%=resultSet.getString("genre")%></td>
                             <td width="100" value="<%=resultSet.getString("year")%>" name="ye"><%=resultSet.getString("year")%></td>
-                        <form id="u">
-                            <td width="100" value="<%=resultSet.getString("link")%>" name="lin">
-                                <input type="radio" name="dwradio" value="<%=resultSet.getString("link")%>" onclick="alert('<%=resultSet.getString("link")%>')">
-                            </td>
-                            </tr>
-                            <%
-                                    }
-                                    connection.close();
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                    JOptionPane.showMessageDialog(null, "Database Failed");
-                                }
-                            %>
-                            <tr align="center">
-                            <br>
-                            <td colspan="6"><input type="submit" value="DOWNLOAD" name="bradio"></td>
-                        </form>
+                            <td width="100"><button id="btndw" onclick="dw();alert('<%=resultSet.getString("link")%>');" value="<%=resultSet.getString("link")%>"><a href="<%=resultSet.getString("link")%>" target="_blank">Download</a></button></td>
                         </tr>
+                        <%
+                                }
+                                connection.close();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        %>
                     </table>
-
-
                 </div>
             </center>
         </div>
